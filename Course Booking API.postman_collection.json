@@ -7,13 +7,56 @@
 	},
 	"item": [
 		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "Add a Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RjYmVlNTBiZjcyMTk1MmQ1YzMxM2QiLCJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NTQxMjY1N30.gyIchtqzbfIPTxNKCpnGWksYYnMu45scmH2poo4aDRU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Java\",\r\n    \"description\": \"Learn the basics of the Java development\",\r\n    \"price\": 5000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/course/",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"course",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "POST \"userRegistration\"",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"firstName\": \"Jim\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"jim@email.com\",\r\n    \"password\": \"jimdoe\",\r\n    \"mobileNo\": \"09987456123\"\r\n}",
+					"raw": "{\r\n    \"firstName\": \"admin\",\r\n    \"lastName\": \"admin\",\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"admin\",\r\n    \"mobileNo\": \"09369852147\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,19 +106,20 @@
 			"response": []
 		},
 		{
-			"name": "POST\"userDetails\"",
+			"name": "GET\"userDetails\"",
 			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\":\"63dc5b81c8fe6a1d901779fe\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RjYmVlNTBiZjcyMTk1MmQ1YzMxM2QiLCJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NTQxMjY1N30.gyIchtqzbfIPTxNKCpnGWksYYnMu45scmH2poo4aDRU",
+							"type": "string"
 						}
-					}
+					]
 				},
+				"method": "GET",
+				"header": [],
 				"url": {
 					"raw": "localhost:3001/user/details",
 					"host": [

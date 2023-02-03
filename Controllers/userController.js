@@ -68,13 +68,16 @@ module.exports.userAuthentication = (request, response) => {
 	})
 }
 
+// Retrive the user details
 module.exports.getProfile = (request, response) => {
-	let id = request.body;
-	
+	// let id = request.body;
+	const userData = auth.decode(request.headers.authorization);
 
-	User.findOne({_id: id.id})
+	console.log(userData);
+
+	User.findById(userData._id)
 	.then(result =>{
-		result.password = "Confidential";
+		result.password = "";
 		return response.send(result);
 	})
 	.catch(error => {

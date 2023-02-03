@@ -6,8 +6,8 @@ const mongoose = require("mongoose");
 // Allows us to control the app's Cross Origin Resource Sharing
 const cors = require("cors");
 
-const userRoutes = require("./Routes/userRoutes.js")
-
+const userRoutes = require("./Routes/userRoutes.js");
+const courseRoutes = require("./Routes/courseRoutes.js");
 const port = 3001;
 
 const app = express();
@@ -37,7 +37,7 @@ app.use(cors());
 // Routing
 
 app.use("/user", userRoutes);
-
+app.use("/course", courseRoutes);
 
 
 

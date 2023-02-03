@@ -2,6 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
+const auth = require("../auth.js");
 
 const userController = require("../Controllers/userController.js")
 
@@ -16,6 +17,11 @@ router.post("/register", userController.userRegistration);
 router.post("/login", userController.userAuthentication);
 
 // route to get a user document by id
-router.post("/details", userController.getProfile);
+router.get("/details", auth.verify, userController.getProfile);
+
+
+
+
+
 
 module.exports = router;

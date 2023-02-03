@@ -20,7 +20,7 @@ const coursesSchema = new mongoose.Schema({
 	createdOn: {
 		type: Date,
 		// The "new Date()" expression instantiates a new "date" that stores the current date and time whenever a course is created in our database.
-		default: new Date();
+		default: new Date()
 	},
 	enrolles: [
 			{
@@ -30,7 +30,7 @@ const coursesSchema = new mongoose.Schema({
 				},
 				enrolledOn:{
 					type: Date,
-					default: new Date();
+					default: new Date()
 				}
 			}
 		]
