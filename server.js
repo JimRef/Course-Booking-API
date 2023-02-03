@@ -6,11 +6,12 @@ const mongoose = require("mongoose");
 // Allows us to control the app's Cross Origin Resource Sharing
 const cors = require("cors");
 
+const userRoutes = require("./Routes/userRoutes.js")
 
 const port = 3001;
 
 const app = express();
-
+	mongoose.set('strictQuery', true)
 	// [MongoDB Connection]
 
 	mongoose.connect("mongodb+srv://admin:admin@batch245-refugio.uoibewa.mongodb.net/batch_Course_API_Refugio?retryWrites=true&w=majority", {
@@ -32,6 +33,10 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(cors());
+
+// Routing
+
+app.use("/user", userRoutes);
 
 
 

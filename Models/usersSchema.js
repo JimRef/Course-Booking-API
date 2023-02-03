@@ -15,7 +15,7 @@ const usersSchema = new mongoose.Schema({
 	},
 	password: {
 		type: String,
-		required [true, "password is required!"]
+		required: [true, "password is required!"]
 	},
 	isAdmin:{
 		type: Boolean,
@@ -23,13 +23,13 @@ const usersSchema = new mongoose.Schema({
 	},
 	mobileNo:{
 		type: String,
-		required [true, "mobileNo is required!"]
+		required: [true, "mobileNo is required!"]
 	},
 	enrollments: [
 			{
 				courseId:{
 					type: String,
-					required: [true. "courseId is required!"]
+					required: [true, "courseId is required!"]
 				},
 				enrolledOn:{
 					type: Date,
@@ -44,4 +44,4 @@ const usersSchema = new mongoose.Schema({
 		]
 })
 
-module.exports = mongoose.models("User", usersSchema);
+module.exports = mongoose.model("User", usersSchema);
