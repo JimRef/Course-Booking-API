@@ -19,8 +19,8 @@ router.post("/login", userController.userAuthentication);
 // route to get a user document by id
 router.get("/details", auth.verify, userController.getProfile);
 
-
-
+// route for user enrollment
+router.post("/enroll/:courseId", auth.verify, userController.enrollCourse)
 
 
 

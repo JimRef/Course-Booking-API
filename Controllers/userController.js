@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const User = require("../Models/usersSchema.js");
+const Course = require("../Models/coursesSchema.js");
 const bcrypt = require("bcrypt");
 const auth = require("../auth.js");
 
@@ -84,3 +85,82 @@ module.exports.getProfile = (request, response) => {
 		return response.send(error);
 	})
 }
+
+// Controller for user enrollment:
+	// 1. We caan get the id of the user by getting decoding the jwt
+	// 2. We can get the courseId by using the request params
+
+module.exports.enrollCourse = async (request, response) =>{
+	// first we have to get the usedId and the courseId
+
+	// decode the token to extract/unpack the payload
+
+	const userData = auth.decode(request.headers.authorization);
+
+	const courseId = request.params.courseId;
+	// 2 things that we need to do in this controller
+		// first, to push the courseId in the enrollments property of the user
+		// second to push the userid in the enrolles property
+	// const findCourseId = Course.findById(courseId)
+
+if (userData.isAdmin === true) {
+		return response.send("You don't have access to this page!")
+
+	} else {
+		await User.findById(userData._id)
+			.then(result =>{
+				if (result === null) {
+					return false
+				} else {
+						let isValid = Course.findById(courseId)
+						.then(result =>{
+							if (result === null) {
+								return response.send("please check the course ID")
+							} else {
+								result.enrolles.push({userId: userData._id})
+								return result.save()
+								.then(save => response.send("The course is now enrolled!"))
+								.catch(error => false)
+							}
+						})
+						if (result !== null) {
+						result.enrollments.push({courseId: courseId})
+						
+						return result.save()
+						.then(save => response.send("The course is now enrolled!"))
+						.catch(error => false)}
+							
+				}
+			})
+			.catch(error => response.send(error))
+
+
+			/*let isCourseUpdated = await Course.findById(courseId)
+			.then(result => {
+				if (result === null) {
+					return false
+				} else {
+
+					result.enrolles.push({userId: userData._id})
+
+					return result.save()
+					.then(save => true)
+					.catch(error => false)
+				}		
+				
+			})
+			.catch(error => response.send(error))*/
+
+		/*if (isUserUpdated){
+			
+			return response.send("The course is now enrolled!");
+		
+		} else {
+			console.log(isUserUpdated)
+			// console.log(isCourseUpdated)
+			return response.send("There was an error during the enrollment. Please try again!");
+		}*/
+	}
+	}	
+
+

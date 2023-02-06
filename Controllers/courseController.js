@@ -140,7 +140,7 @@ module.exports.archiveCourse = (request, response) => {
 	const input = request.body
 
 	if (!userData.isAdmin) {
-		return response.send("You don't have accessto this page!")
+		return response.send("You don't have access to this page!")
 	} else {
 		Course.findById(courseId)
 		.then(result => {

@@ -307,12 +307,46 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "POST \"Enroll Course\"",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RjYmVlNTBiZjcyMTk1MmQ1YzMxM2QiLCJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NTY2Mjc4OH0._S6n30fZVHNeAFzPcJ1u_H2sUT3tpahfq4_8BIzK7LM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:3001/user/enroll/63e04916214c767521252bb1",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"user",
+						"enroll",
+						"63e04916214c767521252bb1"
+					]
+				}
+			},
+			"response": []
 		}
 	],
 	"variable": [
 		{
 			"key": "Admin",
 			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RjYmVlNTBiZjcyMTk1MmQ1YzMxM2QiLCJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NTY0Mzg0OX0.Dc9Jlckycv7urhUeGYt6I6Rc9yldm6ZBRh2Iq-tRgvg"
+		},
+		{
+			"key": "user",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RjNWI4MWM4ZmU2YTFkOTAxNzc5ZmUiLCJlbWFpbCI6ImppbUBlbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNjc1NjY1ODM3fQ.xtpu8BPBjRynLe26qExqDTMyVmDkF2fd3uv39d95gG4"
 		}
 	]
 }
