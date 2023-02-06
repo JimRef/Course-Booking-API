@@ -26,7 +26,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"Java\",\r\n    \"description\": \"Learn the basics of the Java development\",\r\n    \"price\": 5000\r\n}",
+							"raw": "{\r\n    \"name\": \"JavaScript\",\r\n    \"description\": \"Learn the basics of the JavaScript development\",\r\n    \"price\": 5000\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -42,6 +42,180 @@
 							"path": [
 								"course",
 								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET\"allCourses\"",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/course/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"course",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET \"allActiveCourses\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/course/allActive",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"course",
+								"allActive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get\"allInactiveCourses\"",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/course/allInactive",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"course",
+								"allInactive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET\"Courses Details\"",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3001/course/63dcc8b4402138da27a98dfc",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"course",
+								"63dcc8b4402138da27a98dfc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT\"updateCourse\"",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"updatedName\",\r\n    \"description\": \"updatedDescription\",\r\n    \"price\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/course/update/63dcc8b4402138da27a98dfc",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"course",
+								"update",
+								"63dcc8b4402138da27a98dfc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PATCH \"Archive Course\"",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Admin}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isActive\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3001/course/archive/63dcc8b4402138da27a98df2",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"course",
+								"archive",
+								"63dcc8b4402138da27a98df2"
 							]
 						}
 					},
@@ -84,7 +258,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"email\": \"jim@email.com\",\r\n    \"password\": \"jimdoe\"\r\n}",
+					"raw": "{\r\n    \"email\": \"admin@email.com\",\r\n    \"password\": \"admin\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -133,6 +307,12 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "Admin",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2RjYmVlNTBiZjcyMTk1MmQ1YzMxM2QiLCJlbWFpbCI6ImFkbWluQGVtYWlsLmNvbSIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY3NTY0Mzg0OX0.Dc9Jlckycv7urhUeGYt6I6Rc9yldm6ZBRh2Iq-tRgvg"
 		}
 	]
 }
